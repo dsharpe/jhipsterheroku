@@ -14,15 +14,15 @@
     "clusteredHttpSession": false,
     "websocket": false,
     "databaseType": "sql",
-    "devDatabaseType": "mysql",
-    "prodDatabaseType": "mysql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "postgresql",
     "searchEngine": false,
     "messageBroker": false,
     "serviceDiscoveryType": false,
     "buildTool": "maven",
     "enableSocialSignIn": false,
     "enableSwaggerCodegen": false,
-    "rememberMeKey": "2486206d392c399c086e89ea83b619a4dd860fe7",
+    "rememberMeKey": "e7fb81847033305e39c3c956af820098db1a4693",
     "clientFramework": "angularX",
     "useSass": false,
     "clientPackageManager": "yarn",
@@ -33,6 +33,7 @@
     "nativeLanguage": "en",
     "languages": [
       "en"
-    ]
+    ],
+    "herokuAppName": "afternoon-scrubland-16095"
   }
 }

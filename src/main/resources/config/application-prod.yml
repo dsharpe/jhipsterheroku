@@ -21,18 +21,12 @@ spring:
             enabled: false
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:mysql://localhost:3306/jhipsterheroku?useUnicode=true&characterEncoding=utf8&useSSL=false
-        username: root
+        url: jdbc:postgresql://localhost:5432/jhipsterheroku
+        username: jhipsterheroku
         password:
-        hikari:
-            data-source-properties:
-                cachePrepStmts: true
-                prepStmtCacheSize: 250
-                prepStmtCacheSqlLimit: 2048
-                useServerPrepStmts: true
     jpa:
-        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-        database: MYSQL
+        database-platform: io.github.jhipster.domain.util.FixedPostgreSQL82Dialect
+        database: POSTGRESQL
         show-sql: false
         properties:
             hibernate.id.new_generator_mappings: true
@@ -93,7 +87,7 @@ jhipster:
     security:
         remember-me:
             # security key (this key should be unique for your application, and kept secret)
-            key: 2486206d392c399c086e89ea83b619a4dd860fe7
+            key: e7fb81847033305e39c3c956af820098db1a4693
     mail: # specific JHipster mail property, for standard properties see MailProperties
         from: jhipsterheroku@localhost
         base-url: http://my-server-url-to-change # Modify according to your server's URL

@@ -26,18 +26,15 @@ spring:
         serialization.indent_output: true
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:mysql://localhost:3306/jhipsterheroku?useUnicode=true&characterEncoding=utf8&useSSL=false
-        username: root
+        url: jdbc:h2:file:./target/h2db/db/jhipsterheroku;DB_CLOSE_DELAY=-1
+        username: jhipsterheroku
         password:
-        hikari:
-            data-source-properties:
-                cachePrepStmts: true
-                prepStmtCacheSize: 250
-                prepStmtCacheSqlLimit: 2048
-                useServerPrepStmts: true
+    h2:
+        console:
+            enabled: false
     jpa:
-        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-        database: MYSQL
+        database-platform: io.github.jhipster.domain.util.FixedH2Dialect
+        database: H2
         show-sql: true
         properties:
             hibernate.id.new_generator_mappings: true
@@ -101,7 +98,7 @@ jhipster:
     security:
         remember-me:
             # security key (this key should be unique for your application, and kept secret)
-            key: 2486206d392c399c086e89ea83b619a4dd860fe7
+            key: e7fb81847033305e39c3c956af820098db1a4693
     mail: # specific JHipster mail property, for standard properties see MailProperties
         from: jhipsterheroku@localhost
         base-url: http://127.0.0.1:8080
